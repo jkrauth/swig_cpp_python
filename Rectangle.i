@@ -5,7 +5,7 @@
 
 %{
 /* Put headers and other declarations here.
-   They will be inserted into the header section
+   They will be inserted into the 'header section'
    of the wrapper file*/
 #include "Rectangle.h"
 %}
