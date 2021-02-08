@@ -1,6 +1,8 @@
 ### Small Python wrapper for a C++ class
 
-SWIG is a software tool, that can be used to integrate C and C++ code into several high-level programming languages like Perl, Ruby, Python, Java, C#, ... Here, I'll show a simple example of how to use [SWIG](http://www.swig.org/Doc3.0/SWIGDocumentation.html#SWIG_output) to wrap a small C++ class into Python. The class is an example taken from [here](https://cython.readthedocs.io/en/latest/src/userguide/wrapping_CPlusPlus.html).
+SWIG is a software tool, that can be used to integrate C and C++ code into several high-level programming languages like Perl, Ruby, Python, Java, C#, ... Here, I'll show a simple example of how to use [SWIG-4](http://www.swig.org/Doc4.0/SWIGDocumentation.html) to wrap a small C++ class into Python.
+
+The example includes two methods with values passed by reference and shows how they can be handled in the interface file, such that the functions return those values in Python.
 
 The C++ files of this example are
 * Rectangle.cpp
