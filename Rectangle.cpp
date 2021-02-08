@@ -32,5 +32,14 @@ void Rectangle::move(int dx, int dy) {
     this->x0 += dx;
     this->y0 += dy;
     this->x1 += dx;
-    this->y1 += dy;    
+    this->y1 += dy;
+}
+
+// Get the corners of the rectangle.
+// Put the information in the pointer arg
+void Rectangle::getCorners(int N, int *corners) {
+  corners[0] = x0;
+  corners[1] = y0;
+  corners[2] = x1;
+  corners[3] = y1;
 }

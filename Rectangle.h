@@ -5,7 +5,7 @@ private:
   int x0 = 0;
   int y0 = 0;
   int x1 = 1;
-  int y1 = 1;  
+  int y1 = 3;
 public:
   Rectangle();
   Rectangle(int x0, int y0, int x1, int y1);
@@ -13,4 +13,5 @@ public:
   int getArea();
   void getSize(int* width, int* height);
   void move(int dx, int dy);
+  void getCorners(int N, int *corners);
 };
