@@ -17,15 +17,16 @@ IOBJS		= $(IWRAP:.i=.o)
 PYTHON_SO	= .so
 
 # Using python setup file for compilation.
-python: $(SRCS) numpy.i
-	$(SWIG) -c++ -python $(SWIGOPT) $(INTERFACE)
+python: $(SRCS) numpy.i $(ISRCS)
 	python setup.py build_ext --inplace
 
 # Alternatively doing this manually
-gcc: $(SRCS) numpy.i
-	$(SWIG) -c++ -python $(SWIGOPT) $(INTERFACE)
+gcc: $(SRCS) numpy.i $(ISRCS)
 	$(CXX) -c -fpic $(CFLAGS) $(ISRCS) $(SRCS) $(PYTHON_INCLUDE)
 	$(CXX) -Wl,-G -shared $(OBJS) $(IOBJS) -o _$(TARGET)$(PYTHON_SO)
+
+$(ISRCS):
+	$(SWIG) -c++ -python $(SWIGOPT) $(INTERFACE)	
 
 numpy.i:
 	wget https://raw.githubusercontent.com/numpy/numpy/master/tools/swig/numpy.i
